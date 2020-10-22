@@ -8,6 +8,7 @@ ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', default=[])
 
 
 INSTALLED_APPS = [
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -18,7 +19,8 @@ INSTALLED_APPS = [
     # Third party
 
     # Local
-    'users'
+    'users.apps.UsersConfig',
+    'core.apps.CoreConfig',
 ]
 
 MIDDLEWARE = [
@@ -55,14 +57,23 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # Database
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('DATABASE_NAME'),
-        'USER': os.environ.get('DATABASE_USER'),
-        'PASSWORD': os.environ.get('DATABASE_PASSWORD'),
-        'HOST': os.environ.get('DATABASE_HOST'),
-        'PORT': os.environ.get('DATABASE_PORT')
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'mydatabase',
     }
 }
+
+
+# Database
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql',
+#        'NAME': os.environ.get('DATABASE_NAME'),
+#        'USER': os.environ.get('DATABASE_USER'),
+#        'PASSWORD': os.environ.get('DATABASE_PASSWORD'),
+#        'HOST': os.environ.get('DATABASE_HOST'),
+#        'PORT': os.environ.get('DATABASE_PORT')
+#    }
+#}
 
 
 # Password validation
