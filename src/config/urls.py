@@ -9,7 +9,7 @@ urlpatterns = [
     
     #Local
     # path('home/', core_views.home),
-    path("core/", include("core.urls")),
+    path("itstep/", include("core.urls")),
 ]
 
 
