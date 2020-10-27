@@ -2,6 +2,6 @@
 venv/
 .env
 *.sqlite3
-mydatabase
-.__atomic-writeax6xd1cj
-.__atomic-write_pql2l02
+*mydatabase
+*.__atomic-writeax6xd1cj
+*.__atomic-write_pql2l02
