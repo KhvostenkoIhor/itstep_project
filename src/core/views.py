@@ -1,17 +1,17 @@
+from django.http import HttpResponse
 from django.shortcuts import render
 
-from django.http import HttpResponse
 
 def home(request, *args, **kwargs) -> HttpResponse:
-	"""Home view"""
-	#TODO RESUME FROM HERE
-	return HttpResponse("<h1>Home page</h1>")
+    """Home view"""
 
-def about(request, *args, **kwargs) -> HttpResponse:
-	"""About view"""
+    ctx = {
+        'messages': [
+            "This is message 1",
+            "This is message 2",
+            "This is message 3",
+            "This is message 4"
+        ]
+    }
 
-	return HttpResponse("About page")
-
-
-
-
+    return render(request, 'core/index.html', context=ctx)

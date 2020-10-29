@@ -22,7 +22,8 @@ a {
 
 a:hover {
     color: rgb(66, 157, 209);
-    font-weight: 700;
+    /*font-weight: 700;*/
+    text-decoration: none;
 
 }
 
@@ -56,7 +57,7 @@ li {
     position: fixed;
     flex-direction: column;
     justify-content: space-between;
-    width: 30%;
+    width: 20%;
     height: 100%;
     align-items: center;
 }
@@ -79,8 +80,14 @@ li {
 }
 
 .content {
-    margin-left: 30%;
+    margin-left: 20%;
     width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 100px 200px;
+    overflow: auto;
+    
+
 }
 
 .menu__img {
@@ -107,7 +114,14 @@ li {
 
 }
 
-
+.card {
+    background-color:white;
+    width: 40%;
+    margin: 0 5%;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    padding: 10px;
+}
 
 
 
