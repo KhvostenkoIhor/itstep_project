@@ -15,3 +15,27 @@ def home(request, *args, **kwargs) -> HttpResponse:
     }
 
     return render(request, 'core/index.html', context=ctx)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
