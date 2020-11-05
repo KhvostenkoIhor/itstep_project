@@ -23,17 +23,21 @@
   <body>
 
     <div class="header">
+    <div class="header__left_side">  
       <h1 class="header__title">IT Step Project</h1>
       <h2 class="header__about">About</h2>
     </div>
+      <h3 class="header__user">Hello, {{user}}</h3>
+    </div>
     
     <div class="wrapper">
-      
-      <div class="menu">
-        
+      <div class="menu">        
         <div class="menu__top">
           
-          <img class="menu__img" src="c:\Users\ASUS\Desktop\111.jpg" alt=""/>
+          <img class="menu__img" 
+          src= "{{user.profile.avatar.image.url}}"
+          alt="My Avatar"
+          />
           
           <div class="menu__name">Ihor Khvostenko</div>
           
@@ -41,24 +45,22 @@
             <a href="#"><li class="menu__link">Friends</li></a>
             <a href="#"><li class="menu__link">Posts</li></a>
             <a href="#"><li class="menu__link">News</li></a>
+            {% comment %} <li class="menu__bottom_item">Settings</li>
+            <li class="menu__bottom_item">Logout</li>           {% endcomment %}
           </ul>
 
         </div>
-      </div>        
-        <ul class="menu__bottom">
+          <ul class="menu__bottom">
             <li class="menu__bottom_item">Settings</li>
             <li class="menu__bottom_item">Logout</li>
-        </ul>
+          </ul>        
+      </div>        
     </div>
 
 
     <link rel="stylesheet" href="{% static 'css\style.css' %}">
   </head>
   <body>
-    <h1>Header</h1>
-    <h1>Menu</h1>
-
-        {% block content %}
-        {% endblock content %}
+        {% block content %} {% endblock content %}
   </body>
 </html>

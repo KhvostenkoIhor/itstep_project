@@ -1,31 +1,21 @@
-{% extends "_base.html" %}
+{% extends "_base.html" %} {% block content %}
 
-{% block content %}
-  <h1>Content</h1>
+<div class="content">
+  {% for post in posts %}
+  <div class="card">
+    <img
+      src= "{{post.image.image.url}}"
+      class="card-img-top"
+      alt="..."
+    />
+    <div class="card-body">
+      <h5 class="card-title">{{post}}</h5>
+      <p class="card-text">{{post.body}}</p>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+  
 {% endblock content %}
 
 
-
-{% comment %} <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Document</title>
-  </head>
-  <body>
-    <h1>Hello from my template</h1>
-
-    <p>
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit illo
-      consectetur deleniti magni dolor veniam quaerat quis vel asperiores
-      voluptates, deserunt, beatae voluptate. Perspiciatis provident amet
-      sapiente officia porro libero?
-    </p>
-
-    <ul>
-      {% for message in messages %}
-        <li><h1>{{message}}</h1></li>
-      {% endfor %}
-    </ul>
-  </body>
-</html> {% endcomment %}
