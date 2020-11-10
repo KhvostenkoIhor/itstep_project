@@ -1,33 +1,29 @@
+from django.views.generic import ListView
+
 from django.http import HttpResponse
 from django.shortcuts import render
 
 from .models import Post
 
-def home(request, *args, **kwargs) -> HttpResponse:
+
+class HomeView(ListView):
     """Home view"""
+    template_name = 'core/index.html'
+    queryset = Post.objects.filter(is_active=True)
+    #queryset = Post.objects.filter(is_active=True)
+class PostView(ListView):
+    """Post view"""
+    template_name = 'core/index.html'
 
-    posts = Post.objects.all()
-    
-    context = {
-        "posts": posts
-    }
+    def get_queryset(self, **kwargs):
+        """Returns active posts"""
+        print(self.request.user)
+        return Post.objects.filter(is_active=True,
+                                    poster=self.request.user)
 
-    return render(request, 'core/index.html', context=context)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    def get(self, request, *args, **kwargs):
+        self.get_queryset(user=request.user)
+        return super().get(request, *args, **kwargs)
 
 
 
