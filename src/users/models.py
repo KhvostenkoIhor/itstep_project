@@ -33,11 +33,11 @@ class Role(models.Model):
 
 
 class User(AbstractUser):
-    """Custom User model"""
-    phone_number = models.CharField(max_length=13)
-    
-    # def __str__(self):
-		# return str(self.username)
+	"""Custom User model"""
+	phone_number = models.CharField(max_length=13)
+
+	def __str__(self):
+		return self.username
 
 
 class Profile(models.Model):
@@ -63,10 +63,10 @@ class Profile(models.Model):
 		if self.first_name and self.last_name:
 			return f"{self.first_name} {self.last_name} | {self.role}"
 		return f"{self.user.username} | {self.role}"
-		
-		# return f"{self.first_name} {last_name}" ?\
-				# self.first_name and self.last_name: \
-					# self.user.username
+
+
+
+
 
 
 
