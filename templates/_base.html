@@ -43,8 +43,8 @@
           
           <ul class="menu__links">
             <a href="#"><li class="menu__link">Friends</li></a>
-            <a href="#"><li class="menu__link">Posts</li></a>
-            <a href="#"><li class="menu__link">News</li></a>
+            <a href="{% url 'core:my_posts' %}"><li class="menu__link">Posts</li></a>
+            <a href="{% url 'core:home' %}"><li class="menu__link">News</li></a>
             {% comment %} <li class="menu__bottom_item">Settings</li>
             <li class="menu__bottom_item">Logout</li>           {% endcomment %}
           </ul>

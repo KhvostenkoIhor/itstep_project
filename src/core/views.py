@@ -11,6 +11,7 @@ class HomeView(ListView):
     template_name = 'core/index.html'
     queryset = Post.objects.filter(is_active=True)
     #queryset = Post.objects.filter(is_active=True)
+
 class PostView(ListView):
     """Post view"""
     template_name = 'core/index.html'
@@ -24,12 +25,5 @@ class PostView(ListView):
     def get(self, request, *args, **kwargs):
         self.get_queryset(user=request.user)
         return super().get(request, *args, **kwargs)
-
-
-
-
-
-
-
 
 
