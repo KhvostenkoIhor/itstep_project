@@ -1,31 +1,19 @@
+{% extends '_base.html' %} {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
+{% block not_auth_content %}
 
-<head>
-    <meta charset="UTF-8" >
-    <title>Login page</title>
-</head>
+<div class="login">
+  <form action="{% url 'login' %}" method="post">
+    {% csrf_token %} {{ form.as_p }}
 
-<style>
-    .login{
+    <button type="submit">LogIn</button>
+  </form>
+</div>
 
-    }
-</style>
+{% endblock not_auth_content %}
 
-<body>
-
-    <h1>This is loggin page</h1>
-
-    <div class='login'>
-        <form action="{% url 'login' %}" method='post'>
-        {% csrf_token %}
-        {{ form.as_p }}
-
-        <button type='submit'>LogIn</button>
-        </form>
+{% block content %}
+    <div class="login">
+        <h1>Hey {{user}}, you're logged in</h1>
     </div>
-
-
-</body>
-</html>
+{% endblock content %}
