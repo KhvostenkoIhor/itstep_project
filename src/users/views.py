@@ -2,9 +2,9 @@
 from django.contrib.auth import get_user_model
 
 from django.urls import reverse_lazy
-from django.views.generic import CreateView, UpdateView
+from django.views.generic import CreateView, View
 #from django.contrib.auth.forms import UserCreationForm
-
+from django.template.response import TemplateResponse
 from .forms import SignUpForm, UserSettingsForm
 
 User = get_user_model()
@@ -14,15 +14,35 @@ class SignupView(CreateView):
     form_class = SignUpForm
     success_url = reverse_lazy('login')
 
-class UserSettingsView(UpdateView):
+class UserSettingsView(View):
     template_name = 'users/settings.html'
     form_class = UserSettingsForm
-    queryset = User.objects.all()
-    success_url = reverse_lazy('users:settings')
-    pk_url_kwarg = 'id'
 
     def get(self, request, *args, **kwargs):
-        self.object = self.get_object()
-        super().get(request, *args, **kwargs)
+        form = self.form_class()
 
+        context = {
+            'form': form
+        }
+        return TemplateResponse(request, 
+        template=self.template_name,
+        context=context
+        )
+    
+    def post(self, request, *args, **kwargs):
+        form = self.form_class(data=request.POST)
+
+        context = {
+            'form': form
+        }
+        if form.is_valid():
+            form.save(user=request.user)
+            return TemplateResponse(request, 
+                                    template=self.template_name,
+                                    context=context)
+
+        context['errors'] = form.errors
+        return TemplateResponse(request,
+                                template=self.template_name,
+                                context=context)
 

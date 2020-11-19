@@ -10,7 +10,7 @@ urlpatterns = [
             SignupView.as_view(), 
             name='signup'),
     
-    path('settings/<id/>', 
+    path('settings/', 
             UserSettingsView.as_view(), 
-            name='settings')
+            name='settings'),
 ]
