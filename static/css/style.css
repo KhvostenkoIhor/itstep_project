@@ -1,154 +1,169 @@
 /* Nullify */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 h1,
 h2 {
-  display: inline;
+    display: inline;
 }
 
 a {
-  color: #000;
-  text-decoration: none;
-  transition: 0.3s ease-in-out;
+    color: #000;
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
 }
 
 a:hover {
-  color: rgb(255, 255, 255);
-  text-decoration: none;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
 }
+
 li {
-  list-style-type: none;
+    list-style-type: none;
 }
 
 .header {
-  width: 100%;
-  background-color: rgb(66, 157, 209);
-  padding: 15px;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+    width: 100%;
+    background-color: rgb(66, 157, 209);
+    padding: 15px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .header__title {
-  margin-right: 85px;
+    margin-right: 85px;
 }
 
 .header__authentication a {
-  margin: 0 5px;
-  font-size: 22px;
+    margin: 0 5px;
+    font-size: 22px;
 }
 
 .wrapper {
-  background-color: rgb(208, 208, 208);
-  width: 100%;
-  height: 100%;
-  display: flex;
+    background-color: rgb(208, 208, 208);
+    width: 100%;
+    height: 100%;
+    display: flex;
 }
 
 .menu {
-  background-color: yellow;
-  position: fixed;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  width: 20%;
-  height: 100%;
+    background-color: rgb(208, 208, 208);
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 20%;
+    height: 100%;
 }
 
 .menu__top {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
 .menu__bottom {
-  width: 100%;
-  display: block;
-  margin-bottom: 100px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    width: 100%;
+    display: block;
+    margin-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .menu__img {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  margin-bottom: 10px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-bottom: 10px;
 }
+
 .menu__name {
-  font-size: 30px;
-  margin-bottom: 30px;
+    font-size: 30px;
+    margin-bottom: 30px;
 }
+
 .menu__links {
 }
+
 .menu__link {
-  font-size: 25px;
-  text-align: center;
-  margin-bottom: 15px;
+    font-size: 25px;
+    text-align: center;
+    margin-bottom: 15px;
 }
+
 .content {
-  margin-left: 20%;
-  width: 79%;
-  display: flex;
-  flex-wrap: wrap;
-  padding: 100px 200px;
+    margin-left: 20%;
+    width: 79%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 100px 200px;
 }
 
 .card {
-  padding: 20px;
-  margin: 0 5%;
-  margin-bottom: 50px;
-  width: 40%;
-  border-radius: 10px;
+    padding: 20px;
+    margin: 0 5%;
+    margin-bottom: 50px;
+    width: 40%;
+    border-radius: 10px;
 }
 
 .login {
-  width: 10%;
-  margin: 10% 45%;
-  text-align: center;
-  font-size: 22px;
+    width: 10%;
+    margin: 10% 45%;
+    text-align: center;
+    font-size: 22px;
 }
 
 .signup {
-  width: 10%;
-  margin: 10% 45%;
-  font-size: 20px;
-  text-align: center;
+    width: 10%;
+    margin: 10% 45%;
+    text-align: center;
+    font-size: 20px;
+}
+
+.settings__initial_data {
+    margin-left: 25%;
 }
 
 .user__settings {
-  display: flex;
-  flex-direction: column;
-  margin: 10% 0 0 20%;
-  width: 80%;
-  align-items: center;
-  justify-content: center;
-  background-color: rgb(253, 250, 250);
-  height: 150px;
+    width: 80%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 5% 0 0 20%;
+
 }
+
 .user__settings_form {
- font-size: 20px;
- 
- background-color: white;
- display: flex;
- flex-direction: column;
- justify-content: center;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#id_first_name, #id_last_name {
+    margin-bottom: 30px;
 }
 
 .messages {
-  margin-left: 40%;
+    margin-left: 40%;
 }
-.settings__initial_data {
-  margin-left: 25%;
+
+.post__create {
+    margin-left: 700px;
+    margin-top: 200px;
 }

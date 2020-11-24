@@ -23,23 +23,20 @@
     </div>
 
     <ul class="menu__bottom">
-      <a href="{% url 'users:settings' %}"><li class="menu__bottom_item">Settings</li></a>
+      <a href="{% url 'users:settings' %}"
+        ><li class="menu__bottom_item">Settings</li></a
+      >
       <a href="{%url 'logout' %}"><li class="menu__bottom_item">Logout</li></a>
     </ul>
   </div>
 </div>
 
-<div class="content">
-  <a href="{% url 'core:post_creation'%}">Create post</a>
-  {% for post in object_list %}
-  <div class="card">
-    <img src="{{post.image.image.url}}" class="card-img-top" alt="..." />
-    <div class="card-body">
-      <h5 class="card-title">{{post}}</h5>
-      <p class="card-text">{{post.body}}</p>
-    </div>
-  </div>
-  {% endfor %}
+<div class="post__create">
+  <form method="POST" action="">
+    {% csrf_token %} {{form.as_p}}
+
+    <button type="submit">Create post</button>
+  </form>
 </div>
 
 {% endblock content %}
